@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-H TECH CEO Portfolio | Abdulrahman S. Galadima</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* COLOR VARIABLES (Default shine DARK) */
+        :root {
+            --bg-primary: #121212;      /* Bakin Background */
+            --bg-secondary: #1e1e1e;    /* Card Background */
+            --text-primary: #f0f0f0;    /* Farin Rubutu */
+            --text-secondary: #aaa;     /* Hazy Rubutu */
+            --accent: #6c63ff;          /* Purple */
+            --border: #333;
+        }
+
+        /* LIGHT MODE SETTINGS (Idan an danna button) */
+        [data-theme="light"] {
+            --bg-primary: #ffffff;      /* Farin Background */
+            --bg-secondary: #f4f4f4;    /* Card Background */
+            --text-primary: #333333;    /* Bakin Rubutu */
+            --text-secondary: #666666;  /* Hazy Rubutu */
+            --accent: #4f46e5;          /* Darker Purple */
+            --border: #ddd;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+
+        a { color: var(--accent); text-decoration: none; transition: 0.3s; }
+        a:hover { opacity: 0.8; }
+
+        .section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 5%; background-color: var(--bg-secondary);
+            position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        .navbar .logo { font-size: 1.5rem; font-weight: bold; color: var(--accent); }
+        .navbar nav { display: flex; align-items: center; }
+        .navbar nav a { color: var(--text-primary); margin-left: 20px; font-weight: 500; }
+        
+        /* THEME TOGGLE BUTTON */
+        .theme-btn {
+            background: none; border: 2px solid var(--accent); color: var(--text-primary);
+            padding: 5px 10px; border-radius: 20px; cursor: pointer; margin-left: 20px;
+            font-size: 1.2rem; transition: 0.3s;
+        }
+        .theme-btn:hover { background: var(--accent); color: #fff; }
+
+        /* HERO SECTION */
+        .hero { min-height: 85vh; display: flex; align-items: center; gap: 50px; padding-top: 50px; flex-wrap: wrap-reverse; }
+        .hero .content { flex: 1; }
+        .hero .section-tag { color: var(--accent); font-weight: bold; letter-spacing: 2px; margin-bottom: 10px; display: block; }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; line-height: 1.2; }
+        .hero h2 { font-size: 1.3rem; color: var(--text-secondary); margin-bottom: 20px; font-weight: 300; }
+        .hero .bio { margin-bottom: 30px; font-size: 1.1rem; max-width: 600px; color: var(--text-secondary); }
+
+        /* PROFILE IMAGE */
+        .profile-card {
+            width: 350px; height: 350px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #00d2ff);
+            padding: 5px; box-shadow: 0 0 40px rgba(108, 99, 255, 0.5);
+            flex-shrink: 0; margin: 0 auto;
+        }
+        .profile-card img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid var(--bg-primary); }
+
+        /* BUTTONS */
+        .btn { padding: 12px 30px; border-radius: 5px; font-weight: bold; display: inline-flex; align-items: center; gap: 8px; margin-right: 15px; cursor: pointer; border: none; }
+        .btn.primary { background-color: var(--accent); color: white; }
+        .btn.secondary { border: 2px solid var(--accent); color: var(--text-primary); background: transparent; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3); }
+
+        /* RESUME & CARDS */
+        .resume-box { background: var(--bg-secondary); padding: 30px; border-radius: 10px; margin-bottom: 30px; border-left: 4px solid var(--accent); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .resume-box h3 { color: var(--text-primary); font-size: 1.4rem; margin-bottom: 5px; }
+        .resume-box h4 { color: var(--accent); font-size: 1rem; margin-bottom: 15px; }
+        .resume-box ul { margin-left: 20px; color: var(--text-secondary); }
+        .resume-box li { margin-bottom: 8px; }
+
+        /* PROJECTS GRID */
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        
+        .project-card { background-color: var(--bg-secondary); border-radius: 10px; overflow: hidden; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .project-card:hover { transform: scale(1.02); }
+        .project-card img { width: 100%; height: 180px; object-fit: cover; }
+        .project-info { padding: 20px; }
+        .project-info h3 { color: var(--text-primary); margin-bottom: 10px; }
+        .project-info p { color: var(--text-secondary); margin-bottom: 15px; font-size: 0.9rem; }
+        .project-btn { width: 100%; justify-content: center; background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 10px; border-radius: 5px; display: block; text-align: center; margin-top: 10px; }
+        .project-btn:hover { background: var(--accent); color: white; }
+
+        /* MENTORS & CONTACT */
+        .mentor-card { text-align: center; padding: 25px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg-secondary); }
+        .mentor-card h3 { color: var(--text-primary); margin-top: 10px; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: var(--bg-secondary); padding: 40px; border-radius: 10px; }
+        form input, form textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: var(--bg-primary); border: 1px solid var(--border); color: var(--text-primary); border-radius: 5px; }
+        
+        footer { text-align: center; padding: 20px; margin-top: 50px; background: var(--bg-secondary); color: var(--text-secondary); }
+
+        @media (max-width: 900px) {
+            .hero { text-align: center; justify-content: center; }
+            .hero .content { max-width: 100%; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .navbar { flex-direction: column; gap: 15px; }
+            .navbar nav { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">G-H TECH</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#resume">Resume</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+            <button id="theme-toggle" class="theme-btn">☀️ Light</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero section">
+            <div class="content">
+                <span class="section-tag">CEO PORTFOLIO</span>
+                <h1>Hi, I'm <span style="color: var(--accent);">Abdulrahman Salisu Galadima</span></h1>
+                <h2>Frontend Developer | Graphic Designer | CEO G-H TECH</h2>
+                
+                <p class="bio">
+                    Welcome to <b>Galadima Home of Technology</b>. I build modern digital solutions and lead innovations in Northern Nigeria. My passion is transforming ideas into reality through code and design.
+                </p>
+                
+                <div class="cta-group">
+                    <a href="#projects" class="btn primary">View Projects</a>
+                    
+                    <a href="cv.pdf" download class="btn secondary">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+            </div>
+            
+            <div class="profile-card">
+                <img src="profile.jpg" alt="Abdulrahman Profile">
+            </div>
+        </section>
+
+        <section id="resume" class="section">
+            <h2 class="section-title">My Professional Resume</h2>
+            
+            <div class="resume-box">
+                <h3>Profile Summary</h3>
+                <p>
+                    Resourceful and visionary Computer Science student and Tech Entrepreneur with strong skills in Web Development (Frontend), Graphic Design, and Leadership. Founder of G-H TECH, dedicated to providing digital solutions. Eager to contribute to the technological advancement of Nigeria.
+                </p>
+            </div>
+
+            <div class="grid-container">
+                <div class="resume-box">
+                    <h3>NUHU BAMALLI POLYTECHNIC ZARIA | In View</h3>
+                    <h4>ND Computer Science (Candidate)</h4>
+                    <ul>
+                        <li>Focus on Software Engineering and Digital Systems.</li>
+                        <li>Building foundational knowledge in computing.</li>
+                    </ul>
+                </div>
+
+                <div class="resume-box">
+                    <h3>CodeAlpha Internship | 2025</h3>
+                    <h4>Frontend Development Intern (December Batch)</h4>
+                    <ul>
+                        <li>Completed tasks: Music Player, Neon Calculator, Portfolio.</li>
+                        <li>Gained practical experience in remote work environments.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="resume-box">
+                <h3>CEO & Founder | G-H TECH</h3>
+                <h4>(Galadima Home of Technology) | 2024 – Present</h4>
+                <ul>
+                    <li>Leading a team to develop software solutions and digital branding.</li>
+                    <li>Designed logos, flyers, and brand identities for local businesses.</li>
+                    <li>Developed responsive websites using HTML, CSS, and JavaScript.</li>
+                    <li>Managed client relationships and project documentation.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="grid-container">
+                
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1540910419868-474947ce5b16?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Voting">
+                    <div class="project-info">
+                        <h3>SUG Election Portal</h3>
+                        <p>Online voting for SUG ELECTION PORTAL. A secure system for student elections.</p>
+                        <a href="https://abdulrahman-s-galadima.github.io/Olline-voting-for-SUG-ELECTION-/" target="_blank" class="project-btn">View Live Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Music Player">
+                    <div class="project-info">
+                        <h3>CodeAlpha Music Player</h3>
+                        <p>A dynamic music player with play, pause, and navigation controls.</p>
+                        <a href="https://abdulrahman-s-galadima.github.io/CodeAlpha_Music_Player/" target="_blank" class="project-btn">View Live Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Calculator">
+                    <div class="project-info">
+                        <h3>Neon Calculator</h3>
+                        <p>A stylish calculator with neon effects handling all arithmetic operations.</p>
+                        <a href="https://abdulrahman-s-galadima.github.io/CodeAlpha_Calculator/" target="_blank" class="project-btn">View Live Project</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="mentors" class="section">
+            <h2 class="section-title">Acknowledgements</h2>
+            <div class="grid-container">
+                <div class="mentor-card">
+                    <h3>Mustafa Aliyu</h3>
+                    <p>Teacher & Mentor</p>
+                </div>
+                <div class="mentor-card">
+                    <h3>Mubarak Kasim</h3>
+                    <p>Computer Scientist</p>
+                </div>
+                <div class="mentor-card">
+                    <h3>Haseen Hayatu</h3>
+                    <p>Academic Guide</p>
+                </div>
+                <div class="mentor-card">
+                    <h3>Aliyu Aminu</h3>
+                    <p>CEO Gistoneer</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-grid">
+                <div>
+                    <h3 style="color: var(--accent); margin-bottom: 20px;">Let's Work Together</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Zaria, Kaduna State, Nigeria</p>
+                    <p><i class="fas fa-envelope"></i> abdulrahmansgaladima404@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +234 906 708 7865</p>
+                </div>
+                <form>
+                    <input type="text" placeholder="Your Name">
+                    <input type="email" placeholder="Your Email">
+                    <textarea rows="5" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 G-H TECH (Galadima Home of Technology). All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Duba ko an taba zaba a baya
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            body.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'light') {
+                toggleBtn.innerText = "🌙 Dark";
+            }
+        }
+
+        toggleBtn.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'light') {
+                body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                toggleBtn.innerText = "☀️ Light";
+            } else {
+                body.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                toggleBtn.innerText = "🌙 Dark";
+            }
+        });
+    </script>
+
+</body>
+</html>
