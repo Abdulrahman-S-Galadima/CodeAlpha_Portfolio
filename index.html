@@ -7,23 +7,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
-        /* COLOR VARIABLES (Default shine DARK) */
+        /* COLOR VARIABLES */
         :root {
-            --bg-primary: #121212;      /* Bakin Background */
-            --bg-secondary: #1e1e1e;    /* Card Background */
-            --text-primary: #f0f0f0;    /* Farin Rubutu */
-            --text-secondary: #aaa;     /* Hazy Rubutu */
-            --accent: #6c63ff;          /* Purple */
+            --bg-primary: #121212;
+            --bg-secondary: #1e1e1e;
+            --text-primary: #f0f0f0;
+            --text-secondary: #aaa;
+            --accent: #6c63ff;
             --border: #333;
         }
 
-        /* LIGHT MODE SETTINGS (Idan an danna button) */
         [data-theme="light"] {
-            --bg-primary: #ffffff;      /* Farin Background */
-            --bg-secondary: #f4f4f4;    /* Card Background */
-            --text-primary: #333333;    /* Bakin Rubutu */
-            --text-secondary: #666666;  /* Hazy Rubutu */
-            --accent: #4f46e5;          /* Darker Purple */
+            --bg-primary: #ffffff;
+            --bg-secondary: #f4f4f4;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+            --accent: #4f46e5;
             --border: #ddd;
         }
 
@@ -34,7 +33,7 @@
             background-color: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+            transition: 0.3s;
         }
 
         a { color: var(--accent); text-decoration: none; transition: 0.3s; }
@@ -53,13 +52,11 @@
         .navbar nav { display: flex; align-items: center; }
         .navbar nav a { color: var(--text-primary); margin-left: 20px; font-weight: 500; }
         
-        /* THEME TOGGLE BUTTON */
         .theme-btn {
             background: none; border: 2px solid var(--accent); color: var(--text-primary);
             padding: 5px 10px; border-radius: 20px; cursor: pointer; margin-left: 20px;
             font-size: 1.2rem; transition: 0.3s;
         }
-        .theme-btn:hover { background: var(--accent); color: #fff; }
 
         /* HERO SECTION */
         .hero { min-height: 85vh; display: flex; align-items: center; gap: 50px; padding-top: 50px; flex-wrap: wrap-reverse; }
@@ -84,14 +81,13 @@
         .btn.secondary { border: 2px solid var(--accent); color: var(--text-primary); background: transparent; }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3); }
 
-        /* RESUME & CARDS */
+        /* RESUME & PROJECTS */
         .resume-box { background: var(--bg-secondary); padding: 30px; border-radius: 10px; margin-bottom: 30px; border-left: 4px solid var(--accent); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         .resume-box h3 { color: var(--text-primary); font-size: 1.4rem; margin-bottom: 5px; }
         .resume-box h4 { color: var(--accent); font-size: 1rem; margin-bottom: 15px; }
         .resume-box ul { margin-left: 20px; color: var(--text-secondary); }
         .resume-box li { margin-bottom: 8px; }
 
-        /* PROJECTS GRID */
         .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         
         .project-card { background-color: var(--bg-secondary); border-radius: 10px; overflow: hidden; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
@@ -103,9 +99,9 @@
         .project-btn { width: 100%; justify-content: center; background: transparent; border: 1px solid var(--accent); color: var(--accent); padding: 10px; border-radius: 5px; display: block; text-align: center; margin-top: 10px; }
         .project-btn:hover { background: var(--accent); color: white; }
 
-        /* MENTORS & CONTACT */
         .mentor-card { text-align: center; padding: 25px; border: 1px solid var(--border); border-radius: 10px; background: var(--bg-secondary); }
         .mentor-card h3 { color: var(--text-primary); margin-top: 10px; }
+        
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: var(--bg-secondary); padding: 40px; border-radius: 10px; }
         form input, form textarea { width: 100%; padding: 12px; margin-bottom: 15px; background: var(--bg-primary); border: 1px solid var(--border); color: var(--text-primary); border-radius: 5px; }
         
@@ -147,7 +143,7 @@
                 <div class="cta-group">
                     <a href="#projects" class="btn primary">View Projects</a>
                     
-                    <a href="cv.pdf" download class="btn secondary">
+                    <a href="CV.pdf" download class="btn secondary">
                         <i class="fas fa-download"></i> Download CV
                     </a>
                 </div>
@@ -205,7 +201,7 @@
             <div class="grid-container">
                 
                 <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1540910419868-474947ce5b16?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Voting">
+                    <img src="voting.jpg" alt="Voting">
                     <div class="project-info">
                         <h3>SUG Election Portal</h3>
                         <p>Online voting for SUG ELECTION PORTAL. A secure system for student elections.</p>
@@ -284,7 +280,6 @@
         const toggleBtn = document.getElementById('theme-toggle');
         const body = document.body;
 
-        // Duba ko an taba zaba a baya
         const currentTheme = localStorage.getItem('theme');
         if (currentTheme) {
             body.setAttribute('data-theme', currentTheme);
