@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G-H TECH CEO Portfolio | Abdulrahman S. Galadima</title>
+    <title>G-H TECH WORKSPACE CEO | Abdulrahman Salisu Galadima</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -63,17 +63,27 @@
         .hero .content { flex: 1; }
         .hero .section-tag { color: var(--accent); font-weight: bold; letter-spacing: 2px; margin-bottom: 10px; display: block; }
         .hero h1 { font-size: 3rem; margin-bottom: 10px; line-height: 1.2; }
-        .hero h2 { font-size: 1.3rem; color: var(--text-secondary); margin-bottom: 20px; font-weight: 300; }
+        
+        /* TYPING EFFECT STYLES */
+        .hero h2 { font-size: 1.5rem; color: var(--text-secondary); margin-bottom: 20px; font-weight: 400; height: 35px;}
+        .cursor { display: inline-block; width: 3px; background-color: var(--accent); animation: blink 0.7s infinite; margin-left: 5px; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
         .hero .bio { margin-bottom: 30px; font-size: 1.1rem; max-width: 600px; color: var(--text-secondary); }
 
-        /* PROFILE IMAGE */
+        /* PROFILE IMAGE SLIDER */
         .profile-card {
             width: 350px; height: 350px; border-radius: 50%;
             background: linear-gradient(135deg, var(--accent), #00d2ff);
             padding: 5px; box-shadow: 0 0 40px rgba(108, 99, 255, 0.5);
-            flex-shrink: 0; margin: 0 auto;
+            flex-shrink: 0; margin: 0 auto; overflow: hidden;
+            position: relative;
         }
-        .profile-card img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid var(--bg-primary); }
+        .profile-card img { 
+            width: 100%; height: 100%; object-fit: cover; 
+            border-radius: 50%; border: 4px solid var(--bg-primary); 
+            transition: opacity 0.5s ease-in-out;
+        }
 
         /* BUTTONS */
         .btn { padding: 12px 30px; border-radius: 5px; font-weight: bold; display: inline-flex; align-items: center; gap: 8px; margin-right: 15px; cursor: pointer; border: none; }
@@ -128,7 +138,7 @@
 <body>
 
     <header class="navbar">
-        <div class="logo">G-H TECH</div>
+        <div class="logo"> G-H TECH WORKSPACE</div>
         <nav>
             <a href="#home">Home</a>
             <a href="#resume">Resume</a>
@@ -143,10 +153,12 @@
             <div class="content">
                 <span class="section-tag">CEO PORTFOLIO</span>
                 <h1>Hi, I'm <span style="color: var(--accent);">Abdulrahman Salisu Galadima</span></h1>
-                <h2>Frontend Developer | Graphic Designer | CEO G-H TECH</h2>
+                
+                <!-- TYPING EFFECT HTML -->
+                <h2><span id="typed-text"></span><span class="cursor">&nbsp;</span></h2>
                 
                 <p class="bio">
-                    Welcome to <b>Galadima Home of Technology</b>. I build modern digital solutions and lead innovations in Northern Nigeria. My passion is transforming ideas into reality through code and design.
+                    Welcome to <b>G-H TECH WORKSPACE </b>. I build modern digital solutions and lead innovations in Northern Nigeria. My passion is transforming ideas into reality through clean code, scalable architecture, and intuitive design.
                 </p>
                 
                 <div class="cta-group">
@@ -157,8 +169,9 @@
                 </div>
             </div>
             
+            <!-- IMAGE SLIDER HTML -->
             <div class="profile-card">
-                <img src="profile.jpg" alt="Abdulrahman Profile">
+                <img id="   " src="123.jpg" alt="Abdulrahman Profile Slider">
             </div>
         </section>
 
@@ -168,17 +181,17 @@
             <div class="resume-box">
                 <h3>Profile Summary</h3>
                 <p>
-                    Resourceful and visionary Computer Science student and Tech Entrepreneur with strong skills in Web Development (Frontend), Graphic Design, and Leadership. Founder of G-H TECH, dedicated to providing digital solutions. Eager to contribute to the technological advancement of Nigeria.
+                    Resourceful and visionary Software Engineer and Tech Entrepreneur with strong skills in Full-Stack Web Development, UI/UX, and Leadership. Founder of NexGen Developers Africa, dedicated to providing digital solutions. Eager to contribute to the technological advancement of Nigeria.
                 </p>
             </div>
 
             <div class="grid-container">
                 <div class="resume-box">
                     <h3>NUHU BAMALLI POLYTECHNIC ZARIA | In View</h3>
-                    <h4>ND Computer Science (Candidate)</h4>
+                    <h4>ND Computer Engineering (Candidate)</h4>
                     <ul>
                         <li>Focus on Software Engineering and Digital Systems.</li>
-                        <li>Building foundational knowledge in computing.</li>
+                        <li>Building foundational knowledge in computing architecture.</li>
                     </ul>
                 </div>
 
@@ -187,19 +200,19 @@
                     <h4>Frontend Development Intern (December Batch)</h4>
                     <ul>
                         <li>Completed tasks: Music Player, Neon Calculator, Portfolio.</li>
-                        <li>Gained practical experience in remote work environments.</li>
+                        <li>Gained practical experience in agile remote work environments.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="resume-box">
-                <h3>CEO & Founder | G-H TECH</h3>
-                <h4>(Galadima Home of Technology) | 2024 – Present</h4>
+                <h3>CEO & Founder |G-H TECH WORKSPACE</h3>
+                <h4>(Formerly G-H TECH) | 2024 – Present</h4>
                 <ul>
-                    <li>Leading a team to develop software solutions and digital branding.</li>
-                    <li>Designed logos, flyers, and brand identities for local businesses.</li>
-                    <li>Developed responsive websites using HTML, CSS, and JavaScript.</li>
-                    <li>Managed client relationships and project documentation.</li>
+                    <li>Leading a team to develop robust software solutions and digital branding.</li>
+                    <li>Developing secure web applications using React, Node.js, and MongoDB.</li>
+                    <li>Spearheading the creation of comprehensive digital systems for local governments and institutions.</li>
+                    <li>Managing client relationships, API integrations, and project documentation.</li>
                 </ul>
             </div>
         </section>
@@ -208,6 +221,16 @@
             <h2 class="section-title">Featured Projects</h2>
             <div class="grid-container">
                 
+                <!-- SABON AIKI: DICIS -->
+                <div class="project-card">
+                    <img src="100.jpg" alt="DICIS Project">
+                    <div class="project-info">
+                        <h3>Digital Indigene Certificate System</h3>
+                        <p>A secure portal for Zaria Local Government to issue and verify indigene certificates instantly via QR codes.</p>
+                        <a href="https://zariaindegine.page.gd  " class="project-btn">View Architecture</a>
+                    </div>
+                </div>
+
                 <div class="project-card">
                     <img src="voting.jpg" alt="Voting">
                     <div class="project-info">
@@ -226,15 +249,6 @@
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Calculator">
-                    <div class="project-info">
-                        <h3>Neon Calculator</h3>
-                        <p>A stylish calculator with neon effects handling all arithmetic operations.</p>
-                        <a href="https://abdulrahman-s-galadima.github.io/CodeAlpha_Calculator/" target="_blank" class="project-btn">View Live Project</a>
-                    </div>
-                </div>
-
             </div>
         </section>
 
@@ -242,16 +256,16 @@
             <h2 class="section-title">Acknowledgements</h2>
             <div class="grid-container">
                 <div class="mentor-card">
+                    <h3>Aminu Bakori</h3>
+                    <p>Professional Inspiration</p>
+                </div>
+                <div class="mentor-card">
                     <h3>Mustafa Aliyu</h3>
                     <p>Teacher & Mentor</p>
                 </div>
                 <div class="mentor-card">
                     <h3>Mubarak Kasim</h3>
                     <p>Computer Scientist</p>
-                </div>
-                <div class="mentor-card">
-                    <h3>Haseen Hayatu</h3>
-                    <p>Academic Guide</p>
                 </div>
                 <div class="mentor-card">
                     <h3>Aliyu Aminu</h3>
@@ -268,14 +282,17 @@
                     <p><i class="fas fa-map-marker-alt"></i> Zaria, Kaduna State, Nigeria</p>
                     <p><i class="fas fa-envelope"></i> abdulrahmansgaladima404@gmail.com</p>
                     <p><i class="fas fa-phone"></i> +234 906 708 7865</p>
+                    <p><i class="fas fa-phone"></i> +234 903 205 7863</p>
+                    
                     
                     <div class="social-icons">
                         <a href="https://www.facebook.com/profile.php?id=61569961392210" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.linkedin.com/in/abdulrahman-s-galadima-aa0ba2396?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/abdulrahman-s-galadima-aa0ba2396" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="https://github.com/Abdulrahman-S-Galadima" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
                         <a href="https://wa.me/message/QXVLHKLLFVOSG1" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                        <a href="mailto:abdulrahmansgaladima404@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                      <a href="mailto:abdulrahmansgaladima404@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
                     </div>
+
 
                 </div>
                 <form>
@@ -290,10 +307,11 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 G-H TECH (Galadima Home of Technology). All Rights Reserved.</p>
+        <p>&copy; 2026 NexGen Developers Africa. All Rights Reserved.</p>
     </footer>
 
     <script>
+        // 1. THEME TOGGLE LOGIC
         const toggleBtn = document.getElementById('theme-toggle');
         const body = document.body;
 
@@ -316,7 +334,58 @@
                 toggleBtn.innerText = "🌙 Dark";
             }
         });
+
+        // 2. IMAGE SLIDER LOGIC
+        // Ka tabbatar ka saka sunayen hotunanka anan (Misali: pic1.jpg, pic2.jpg)
+        const myImages = ["profile1.jpg", "profile2.jpg", "profile3.jpg"]; 
+        let currentImageIndex = 0;
+        const profileImgElement = document.getElementById('profile-slider');
+
+        setInterval(() => {
+            profileImgElement.style.opacity = 0; // Fade out
+            setTimeout(() => {
+                currentImageIndex = (currentImageIndex + 1) % myImages.length;
+                profileImgElement.src = myImages[currentImageIndex];
+                profileImgElement.style.opacity = 1; // Fade in
+            }, 500); // Wait half a second before changing source
+        }, 3000); // Canza hoto kowane sakan 3
+
+        // 3. TYPING EFFECT LOGIC
+        const titles = ["Software Engineer", "CEO, G-H TECH WORKSPACE", "Full-Stack Web Developer", "Tech Entrepreneur"];
+        let titleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typedTextElement = document.getElementById("typed-text");
+
+        function typeWords() {
+            const currentTitle = titles[titleIndex];
+            
+            if (isDeleting) {
+                typedTextElement.textContent = currentTitle.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedTextElement.textContent = currentTitle.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typingSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentTitle.length) {
+                typingSpeed = 2000; // Tsaya idan ya gama rubutawa
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                titleIndex = (titleIndex + 1) % titles.length;
+                typingSpeed = 500; // Tsaya kadan kafin ya fara sabon rubutu
+            }
+
+            setTimeout(typeWords, typingSpeed);
+        }
+
+        // Fara aikin typing da zarar shafin ya bude
+        document.addEventListener("DOMContentLoaded", typeWords);
+
     </script>
 
 </body>
-                    </html>
+</html>
