@@ -166,7 +166,13 @@
 <body>
 
     <header class="navbar">
-        <div class="logo"> G-H TECH WORKSPACE</div>
+   
+        
+        <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+    <img src="1234.jpg" alt="G-H TECH WORKSPACE Logo" style="width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--accent); object-fit: cover;">
+    <span>G-H TECH</span>
+</div>
+
         <nav>
             <a href="#home">Home</a>
             <a href="#resume">Resume</a>
@@ -200,6 +206,10 @@
             
             <div class="profile-card">
                 <img id="profile-slider" src="123.jpg" alt="Abdulrahman Profile Slider">
+                <img id="profile-slider" src="1234.jpg" alt="Abdulrahman Profile Slider">
+                
+                
+                
             </div>
         </section>
 
@@ -233,8 +243,12 @@
                 </div>
             </div>
 
-            <div class="resume-box">
-                <h3>CEO & Founder | G-H TECH WORKSPACE</h3>
+            
+                <div class="resume-box" style="position: relative;">
+    <img src="1234.jpg" alt="G-H Tech Logo" style="position: absolute; top: 20px; right: 20px; width: 65px; height: 65px; border-radius: 50%; border: 2px solid var(--accent); box-shadow: 0 0 10px rgba(108, 99, 255, 0.5); object-fit: cover;">
+    <h3 style="padding-right: 70px;">CEO & Founder | G-H TECH WORKSPACE</h3>
+
+                
                 <h4>(Formerly G-H TECH) | 2024 – Present</h4>
                 <ul>
                     <li>Leading a team to develop robust software solutions and digital branding.</li>
@@ -424,13 +438,13 @@
         });
 
         // 2. IMAGE SLIDER LOGIC
-        const myImages = ["123.jpg", "profile2.jpg", "profile3.jpg"]; 
+        const myImages = ["123.jpg", "1234.jpg", "12345.jpg"]; 
         let currentImageIndex = 0;
         const profileImgElement = document.getElementById('profile-slider');
 
         setInterval(() => {
             if(profileImgElement) {
-                profileImgElement.style.opacity = 0; 
+                profileImgElement.style.opacity = 1; 
                 setTimeout(() => {
                     currentImageIndex = (currentImageIndex + 1) % myImages.length;
                     profileImgElement.src = myImages[currentImageIndex];
